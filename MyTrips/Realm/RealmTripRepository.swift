@@ -10,7 +10,7 @@ import Foundation
 
 protocol TripRepository {
     func allTrips() throws -> [Trip]
-    func save(_ trips: [Trip]) throws
+    func save(_ trips: [Trip]) async throws
 }
 
 class RealmTripRepository: TripRepository {
@@ -20,13 +20,22 @@ class RealmTripRepository: TripRepository {
         return realm.objects(TripObject.self).map { Trip($0)}
     }
     
-    func save(_ trips: [Trip]) throws {
-        let realm = try Realm()
+    func save(_ trips: [Trip]) async throws {
+//        let realm = try Realm()
+//            try realm.write {
+//                for trip in trips {
+//                    realm.add(TripObject(trip), update: .modified)
+//                }
+//            }
+        
+        try await Task.detached {
+            let realm = try Realm()
             try realm.write {
                 for trip in trips {
                     realm.add(TripObject(trip), update: .modified)
                 }
             }
+        }.value
         
     }
     

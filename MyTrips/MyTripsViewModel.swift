@@ -15,7 +15,7 @@ final class MyTripsViewModel {
         case empty
         case loading
         case loaded([Trip])
-        case failure(TripServiceError)
+        case failure
     }
     
     private(set) var state: State = .loading
@@ -31,18 +31,36 @@ final class MyTripsViewModel {
     }
     
     func loadTrips(isRefresh: Bool = false) async {
-        if !isRefresh {
+        let savedTrips = (try? repository.allTrips()) ?? []
+        if !savedTrips.isEmpty {
+            state = .loaded(savedTrips)
+        } else if !isRefresh {
             state = .loading
         }
+        //        do {
+        //            let trips = try await service.fetchTrip()
+        //            state = trips.isEmpty ? .empty : .loaded(trips)
+        //        } catch let error as TripServiceError {
+        //            state = .failure(error)
+        //        } catch is CancellationError {
+        //
+        //        }
+        //        catch {
+        //
+        //        }
+        
         do {
-            let trips = try await service.fetchTrip()
+            let serviceTrips = try await service.fetchTrip()
+            try await repository.save(serviceTrips)
+            let trips = try repository.allTrips()
             state = trips.isEmpty ? .empty : .loaded(trips)
-        } catch let error as TripServiceError {
-            state = .failure(error)
+            
         } catch is CancellationError {
             
-        }
-        catch {
+        } catch {
+            if savedTrips.isEmpty {
+                state = .failure
+            }
             
         }
         
