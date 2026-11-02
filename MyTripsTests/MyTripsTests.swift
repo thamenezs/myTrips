@@ -50,4 +50,19 @@ final class MyTripsViewModelTests: XCTestCase {
 
         XCTAssertEqual(viewModel.state, .empty)
     }
+    
+    func testShowsServerTripsWhenOnline() async {
+        
+        let trips = [Trip(id: 1, name: "Brasil 21", country: "Brasil", days: 21),
+                     Trip(id: 2, name: "Italia 2", country: "Italy", days: 4)]
+        
+        let viewModel = MyTripsViewModel(
+            service: FakeTripService(result: .success(trips)),
+            repository: InMemoryTripRepository(trips: [])
+        )
+        
+        await viewModel.loadTrips()
+        
+        XCTAssertEqual(viewModel.state, .loaded(trips))
+    }
 }
