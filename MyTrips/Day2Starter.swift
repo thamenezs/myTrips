@@ -72,7 +72,7 @@ final class LegacyTripService: Sendable {
 extension LegacyTripService {
     // func fetchTrips() async throws -> [Trip] { ... }
     
-    func fetchTrip() async throws -> [Trip] {
+    func fetchTrips() async throws -> [Trip] {
         try await withCheckedThrowingContinuation { continuation in
             fetchTrips { result in
                 continuation.resume(with: result)

@@ -7,7 +7,6 @@
 
 import SwiftUI
 import RealmSwift
-import Realm
 
 @main
 struct MyTripsApp: App {
@@ -15,7 +14,7 @@ struct MyTripsApp: App {
         Realm.Configuration.defaultConfiguration = Realm.Configuration(
             schemaVersion: 2, migrationBlock: { migration, oldSchemaVersion in
             if oldSchemaVersion < 2 {
-                migration.renameProperty(onType: TripObject.className(),
+                migration.renameProperty(onType: "TripObject",
                                          from: "days",
                                          to: "durationInDays")
             }

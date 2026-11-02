@@ -37,7 +37,7 @@ struct ContentView: View {
                     .refreshable {
                         await viewModel.loadTrips(isRefresh: true)
                     }
-                case .failure(_):
+                case .failure:
                     ContentUnavailableView {
                         Label("Could not load trips", systemImage: "wifi.exclamationmark")
                     } description: {

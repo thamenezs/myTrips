@@ -10,14 +10,30 @@
 		9922D044309815EB003EE1C6 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 9922D043309815EB003EE1C6 /* RealmSwift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		9922D05B3098D4F9003EE1C6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9922CFD730960319003EE1C6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9922CFDE30960319003EE1C6;
+			remoteInfo = MyTrips;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		9922CFDF30960319003EE1C6 /* MyTrips.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyTrips.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9922D0573098D4F9003EE1C6 /* MyTripsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyTripsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		9922CFE130960319003EE1C6 /* MyTrips */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = MyTrips;
+			sourceTree = "<group>";
+		};
+		9922D0583098D4F9003EE1C6 /* MyTripsTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = MyTripsTests;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -31,6 +47,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9922D0543098D4F9003EE1C6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -38,6 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				9922CFE130960319003EE1C6 /* MyTrips */,
+				9922D0583098D4F9003EE1C6 /* MyTripsTests */,
 				9922CFE030960319003EE1C6 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -46,6 +70,7 @@
 			isa = PBXGroup;
 			children = (
 				9922CFDF30960319003EE1C6 /* MyTrips.app */,
+				9922D0573098D4F9003EE1C6 /* MyTripsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -76,6 +101,29 @@
 			productReference = 9922CFDF30960319003EE1C6 /* MyTrips.app */;
 			productType = "com.apple.product-type.application";
 		};
+		9922D0563098D4F9003EE1C6 /* MyTripsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9922D05D3098D4F9003EE1C6 /* Build configuration list for PBXNativeTarget "MyTripsTests" */;
+			buildPhases = (
+				9922D0533098D4F9003EE1C6 /* Sources */,
+				9922D0543098D4F9003EE1C6 /* Frameworks */,
+				9922D0553098D4F9003EE1C6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9922D05C3098D4F9003EE1C6 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				9922D0583098D4F9003EE1C6 /* MyTripsTests */,
+			);
+			name = MyTripsTests;
+			packageProductDependencies = (
+			);
+			productName = MyTripsTests;
+			productReference = 9922D0573098D4F9003EE1C6 /* MyTripsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -88,6 +136,10 @@
 				TargetAttributes = {
 					9922CFDE30960319003EE1C6 = {
 						CreatedOnToolsVersion = 26.6;
+					};
+					9922D0563098D4F9003EE1C6 = {
+						CreatedOnToolsVersion = 26.6;
+						TestTargetID = 9922CFDE30960319003EE1C6;
 					};
 				};
 			};
@@ -109,12 +161,20 @@
 			projectRoot = "";
 			targets = (
 				9922CFDE30960319003EE1C6 /* MyTrips */,
+				9922D0563098D4F9003EE1C6 /* MyTripsTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		9922CFDD30960319003EE1C6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9922D0553098D4F9003EE1C6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -131,7 +191,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9922D0533098D4F9003EE1C6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9922D05C3098D4F9003EE1C6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9922CFDE30960319003EE1C6 /* MyTrips */;
+			targetProxy = 9922D05B3098D4F9003EE1C6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		9922CFE83096031B003EE1C6 /* Debug */ = {
@@ -317,6 +392,46 @@
 			};
 			name = Release;
 		};
+		9922D05E3098D4F9003EE1C6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = thamenezs.MyTripsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyTrips.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MyTrips";
+			};
+			name = Debug;
+		};
+		9922D05F3098D4F9003EE1C6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = thamenezs.MyTripsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyTrips.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MyTrips";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -334,6 +449,15 @@
 			buildConfigurations = (
 				9922CFEB3096031B003EE1C6 /* Debug */,
 				9922CFEC3096031B003EE1C6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9922D05D3098D4F9003EE1C6 /* Build configuration list for PBXNativeTarget "MyTripsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9922D05E3098D4F9003EE1C6 /* Debug */,
+				9922D05F3098D4F9003EE1C6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
