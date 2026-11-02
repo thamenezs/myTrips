@@ -20,11 +20,16 @@ final class MyTripsViewModel {
     
     private(set) var state: State = .loading
     private let service: LegacyTripService
+    private let repository: RealmTripRepository
     
-    init(service: LegacyTripService = LegacyTripService()){
+    init(
+        service: LegacyTripService = LegacyTripService(),
+        repository: RealmTripRepository = RealmTripRepository()
+    ){
         self.service = service
+        self.repository = repository
     }
-
+    
     func loadTrips(isRefresh: Bool = false) async {
         if !isRefresh {
             state = .loading
@@ -40,7 +45,7 @@ final class MyTripsViewModel {
         catch {
             
         }
-                
+        
     }
     
     
