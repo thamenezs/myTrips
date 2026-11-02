@@ -18,7 +18,7 @@ nonisolated class TripObject: Object {
 
 extension Trip {
     init(_ object: TripObject) {
-        self.init(id: object.id, name: object.name, country: object.country, days: object.durationInDays)
+        self.init(id: object.id, name: object.name, country: object.country, days: object.durationInDays, isFavorited: object.isFavorited)
     }
 }
 
@@ -29,5 +29,6 @@ nonisolated extension TripObject {
         name = trip.name
         country = trip.country
         durationInDays = trip.days
+        isFavorited = trip.isFavorited
     }
 }

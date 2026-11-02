@@ -23,15 +23,23 @@ struct ContentView: View {
                 case .loaded(let trips):
                     List {
                         ForEach(trips) { trip in
-                            VStack(alignment: .leading) {
-                                Text(trip.name)
-                                    .font(.title2)
-                                Text(trip.country)
-                                    .font(.title3)
-                                Text(trip.duration)
-                                    .font(.footnote)
+                            HStack{
+                                VStack(alignment: .leading) {
+                                    Text(trip.name)
+                                        .font(.title2)
+                                    Text(trip.country)
+                                        .font(.title3)
+                                    Text(trip.duration)
+                                        .font(.footnote)
+                                }
+                                Spacer()
+                                Button(trip.isFavorited ? "Remove from favorites" : "Add to favorites",
+                                       systemImage: trip.isFavorited ? "star.fill" : "star") {
+                                    viewModel.toggleFavorited(trip)
+                                }
+                                .labelStyle(.iconOnly)
+                                .buttonStyle(.borderless)
                             }
-                            
                         }
                     }
                     .refreshable {

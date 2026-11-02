@@ -13,4 +13,5 @@ struct Trip: Identifiable, Hashable {
     let name: String
     let country: String
     let days: Int
+    var isFavorited = false
 }
